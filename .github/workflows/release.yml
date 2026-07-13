@@ -12,15 +12,15 @@ permissions:
 jobs:
   release:
     runs-on: ubuntu-latest
-    env:
-      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-node@v6
         with:
-          node-version: 22
-          cache: npm
+          node-version: 24
           registry-url: https://registry.npmjs.org
+          package-manager-cache: false
+      - name: Use an OIDC-capable npm version
+        run: npm install --global npm@11.18.0
       - run: npm ci
       - name: Check tag matches package version
         shell: bash
@@ -29,11 +29,8 @@ jobs:
           test "v${VERSION}" = "${GITHUB_REF_NAME}"
       - run: npm run verify
       - run: npm run pack:cli
-      - name: Publish npm package when NPM_TOKEN is configured
-        if: ${{ env.NPM_TOKEN != '' }}
-        env:
-          NODE_AUTH_TOKEN: ${{ env.NPM_TOKEN }}
-        run: npm publish --workspace @minhworker/agent-room
+      - name: Publish npm package with Trusted Publishing
+        run: npm publish --workspace @minhworker/agent-room --access public
       - name: Create GitHub release
         env:
           GH_TOKEN: ${{ github.token }}

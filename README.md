@@ -175,7 +175,7 @@ claude plugin validate . --strict
 4. Commit and push the release changes.
 5. Create and push tag `vX.Y.Z`.
 
-The release workflow verifies the tag, creates `agent-room-X.Y.Z.tgz`, optionally publishes npm when `NPM_TOKEN` exists, and always attaches the immutable tarball to a GitHub Release.
+The release workflow verifies the tag, publishes npm through GitHub Actions OIDC Trusted Publishing, creates `agent-room-X.Y.Z.tgz`, and attaches the immutable tarball to a GitHub Release. It does not use a long-lived npm token.
 
 ## Architecture and boundaries
 
