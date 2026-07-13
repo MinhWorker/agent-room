@@ -1,0 +1,26 @@
+name: Bootstrap npm
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    env:
+      NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          cache: npm
+          registry-url: https://registry.npmjs.org
+      - name: Use a known npm version
+        run: npm install --global npm@11.18.0
+      - run: npm ci
+      - run: npm run verify
+      - name: Publish the first public package version
+        run: npm publish --workspace @minhworker/agent-room --access public
