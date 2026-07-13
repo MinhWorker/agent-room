@@ -1,0 +1,24 @@
+{
+  "name": "agent-room-repository",
+  "private": true,
+  "workspaces": [
+    "packages/cli"
+  ],
+  "scripts": {
+    "build": "npm run build --workspace @minhworker/agent-room",
+    "typecheck": "npm run typecheck --workspace @minhworker/agent-room",
+    "test": "npm run test --workspace @minhworker/agent-room",
+    "test:watch": "npm run test:watch --workspace @minhworker/agent-room",
+    "version:check": "node scripts/sync-version.mjs --check",
+    "version:sync": "node scripts/sync-version.mjs --write",
+    "validate:release": "node scripts/validate-release.mjs",
+    "smoke:dist": "node scripts/smoke-dist.mjs",
+    "smoke:plugins": "node scripts/smoke-native-plugins.mjs --require-tools",
+    "pack:cli": "node scripts/pack-cli.mjs",
+    "verify": "npm run version:check && npm run typecheck && npm test && npm run build && npm run smoke:dist && npm run validate:release"
+  },
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "packageManager": "npm@11.11.0"
+}

@@ -1,0 +1,47 @@
+{
+  "name": "@minhworker/agent-room",
+  "version": "0.1.0",
+  "description": "Local terminal rooms for coding agents and humans",
+  "type": "module",
+  "bin": {
+    "agent-room": "dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit -p tsconfig.json"
+  },
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MinhWorker/agent-room.git",
+    "directory": "packages/cli"
+  },
+  "bugs": {
+    "url": "https://github.com/MinhWorker/agent-room/issues"
+  },
+  "homepage": "https://github.com/MinhWorker/agent-room#readme",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "better-sqlite3": "^12.11.1",
+    "commander": "^15.0.0"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.13",
+    "@types/node": "^26.1.1",
+    "tsx": "^4.20.6",
+    "typescript": "^7.0.2",
+    "vitest": "^4.1.10"
+  }
+}

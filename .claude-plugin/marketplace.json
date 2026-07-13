@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
+  "name": "agent-room",
+  "description": "Native Claude Code integration for the local agent-room runtime.",
+  "owner": {
+    "name": "MinhWorker"
+  },
+  "plugins": [
+    {
+      "name": "agent-room",
+      "source": "./plugins/agent-room",
+      "description": "Join rooms, watch new events in the background, and exchange explicit messages.",
+      "version": "0.1.0",
+      "author": {
+        "name": "MinhWorker"
+      },
+      "category": "productivity"
+    }
+  ]
+}

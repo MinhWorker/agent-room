@@ -1,0 +1,10 @@
+node_modules/
+dist/
+coverage/
+artifacts/
+.tmp/
+*.tsbuildinfo
+*.db
+*.db-shm
+*.db-wal
+.agent-room-smoke/

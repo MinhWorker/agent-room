@@ -1,0 +1,4 @@
+interface:
+  display_name: "Agent Room"
+  short_description: "Coordinate coding agents through local rooms"
+  default_prompt: "Use $agent-room to join a local room and watch for new messages."

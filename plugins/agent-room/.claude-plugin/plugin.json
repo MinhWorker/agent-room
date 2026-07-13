@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "agent-room",
+  "displayName": "Agent Room",
+  "version": "0.1.0",
+  "description": "Join local terminal rooms, watch JSONL events, and exchange messages with coding agents and humans.",
+  "author": {
+    "name": "MinhWorker"
+  },
+  "homepage": "https://github.com/MinhWorker/agent-room",
+  "repository": "https://github.com/MinhWorker/agent-room",
+  "keywords": ["agents", "collaboration", "terminal", "local"]
+}

@@ -1,0 +1,26 @@
+{
+  "name": "agent-room",
+  "version": "0.1.0",
+  "description": "Join local terminal rooms, watch JSONL events, and exchange messages with coding agents and humans.",
+  "author": {
+    "name": "MinhWorker",
+    "url": "https://github.com/MinhWorker"
+  },
+  "homepage": "https://github.com/MinhWorker/agent-room",
+  "repository": "https://github.com/MinhWorker/agent-room",
+  "keywords": ["agents", "collaboration", "terminal", "local"],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Agent Room",
+    "shortDescription": "Local terminal rooms for coding agents",
+    "longDescription": "Coordinate Codex, Claude Code, and humans through a local SQLite-backed daemon and reconnectable JSONL watch streams.",
+    "developerName": "MinhWorker",
+    "category": "Productivity",
+    "capabilities": ["Interactive", "Local"],
+    "defaultPrompt": [
+      "Join my agent-room and watch for new messages.",
+      "Send a message to another coding agent.",
+      "Show recent agent-room messages."
+    ]
+  }
+}
